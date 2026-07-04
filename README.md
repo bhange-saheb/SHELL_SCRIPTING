@@ -7,6 +7,9 @@ cp /etc/ssh/sshd_config /etc/ssh/sshd_config_backup
 ## Modify the sshd_config file to enable password authentication
 ```bash
 sed -i "s/.*PasswordAuthentication.*/PasswordAuthentication yes/g" /etc/ssh/sshd_config
+grep -r "PasswordAuthentication" /etc/ssh/sshd_config.d/ # ---> this will give file location where we havbe to update
+
+nano #file make no to yes
 ```
 ## Restart the SSH service
 ```bash
